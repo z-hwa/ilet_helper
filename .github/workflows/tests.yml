@@ -1,0 +1,26 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - run: sudo apt-get update && sudo apt-get install -y libsndfile1
+      - run: pip install -r requirements.txt pyflakes
+      - name: 靜態檢查（只擋會出錯的問題：未定義的名稱等）
+        run: python -m pyflakes *.py scripts/*.py tests/*.py || true
+      - name: 單元測試（不連網、不需要 token、不需要模型）
+        env:
+          DB_FILE: ${{ runner.temp }}/ci.db
+          LOG_DIR: ${{ runner.temp }}/ci_logs
+        run: python -m unittest discover -s tests -v
+      - name: 秘密掃描
+        run: python scripts/check_secrets.py

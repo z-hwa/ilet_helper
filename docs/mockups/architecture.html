@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8"><title>architecture</title>
+<style>
+  html,body{margin:0;background:#fff}
+  svg{display:block;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif}
+  .t{font-size:15px;fill:#1f2937} .s{font-size:12.5px;fill:#4b5563} .h{font-size:16px;font-weight:700;fill:#111827}
+  .box{stroke-width:1.6;rx:12}
+  .arrow{stroke:#6b7280;stroke-width:1.8;fill:none;marker-end:url(#a)}
+  .dash{stroke:#9ca3af;stroke-width:1.6;fill:#f9fafb;stroke-dasharray:6 5;rx:16}
+</style></head><body>
+<svg width="940" height="640" viewBox="0 0 940 640" xmlns="http://www.w3.org/2000/svg">
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#6b7280"/></marker></defs>
+
+  <!-- Discord users -->
+  <rect class="box" x="250" y="14" width="440" height="58" fill="#eef2ff" stroke="#6366f1"/>
+  <text class="h" x="470" y="40" text-anchor="middle">Discord 使用者</text>
+  <text class="s" x="470" y="60" text-anchor="middle">slash command ・ 文字作答 ・ 語音訊息</text>
+  <path class="arrow" d="M470 74 V108"/>
+
+  <!-- one process -->
+  <rect class="dash" x="20" y="108" width="900" height="338"/>
+  <text class="s" x="40" y="132">python run_all.py ── 同一個程序，在 Discord 上是兩個 bot</text>
+
+  <rect class="box" x="44" y="146" width="410" height="84" fill="#fff7ed" stroke="#f97316"/>
+  <text class="h" x="64" y="172">雅斯寶寶 · bot.py</text>
+  <text class="s" x="64" y="194">單字 ・ 閱讀 ・ 聽力（快速／模擬 Section 1~4）</text>
+  <text class="s" x="64" y="214">口說（含對話追問）・ 四項 IELTS band 評級</text>
+
+  <rect class="box" x="486" y="146" width="410" height="84" fill="#ecfdf5" stroke="#10b981"/>
+  <text class="h" x="506" y="172">德語寶寶 · german.py</text>
+  <text class="s" x="506" y="194">每日例句（含時態）・ 文法練習 ・ 口說 ・ 閒聊 gossip</text>
+  <text class="s" x="506" y="214">AI 問答 ・ CEFR 評級</text>
+
+  <path class="arrow" d="M249 232 V262"/><path class="arrow" d="M691 232 V262"/>
+
+  <rect class="box" x="44" y="262" width="852" height="80" fill="#f3f4f6" stroke="#6b7280"/>
+  <text class="h" x="64" y="288">共用基礎</text>
+  <text class="s" x="64" y="310">ask_gemini：用量防護（RPM／每日上限／重複攔截／斷路器）→ 503 自動換備援模型 → 重試</text>
+  <text class="s" x="64" y="330">Session ＋ 每人一把鎖 ・ 評級（skills.py）・ 帳號／封鎖（accounts.py）・ 使用紀錄（app_events、api_payloads）</text>
+
+  <path class="arrow" d="M470 344 V372"/>
+  <rect class="box" x="44" y="372" width="852" height="58" fill="#fefce8" stroke="#ca8a04"/>
+  <text class="h" x="64" y="396">純邏輯（不碰 Discord／API，可完整單元測試）</text>
+  <text class="s" x="64" y="416">german_logic ・ gossip ・ listening_test ・ dialogue ・ exercises ・ speaking ・ usage ・ skills ・ jsonutil</text>
+
+  <!-- outside -->
+  <path class="arrow" d="M160 446 V500"/><path class="arrow" d="M470 446 V500"/><path class="arrow" d="M780 446 V500"/>
+
+  <rect class="box" x="44" y="500" width="240" height="108" fill="#eff6ff" stroke="#3b82f6"/>
+  <text class="h" x="64" y="526">Google Gemini API</text>
+  <text class="s" x="64" y="548">出題、批改、評分、聽音檔</text>
+  <text class="s" x="64" y="568">主模型 flash-lite</text>
+  <text class="s" x="64" y="588">503 時 → 備援模型</text>
+
+  <rect class="box" x="350" y="500" width="240" height="108" fill="#f5f3ff" stroke="#8b5cf6"/>
+  <text class="h" x="370" y="526">SQLite（本機單一檔案）</text>
+  <text class="s" x="370" y="548">使用者、作答、評級曲線</text>
+  <text class="s" x="370" y="568">api_calls ・ api_payloads</text>
+  <text class="s" x="370" y="588">app_events（可查問題）</text>
+
+  <rect class="box" x="656" y="500" width="240" height="108" fill="#fdf2f8" stroke="#ec4899"/>
+  <text class="h" x="676" y="526">本地語音模型（CPU）</text>
+  <text class="s" x="676" y="548">Kokoro：英文配音（聽力、考官）</text>
+  <text class="s" x="676" y="568">Piper：德文配音（4 個聲音）</text>
+  <text class="s" x="676" y="588">faster-whisper：對話追問聽寫</text>
+</svg>
+</body></html>

@@ -1,0 +1,35 @@
+# ===== 秘密：絕對不要進 git =====
+.env
+.env.*
+!.env.example
+
+# ===== 執行期資料（含使用者的作答、錄音逐字稿、Discord ID）=====
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.bundle
+audio_cache/
+records/
+logs/
+*.log
+
+# ===== 大型模型（用 scripts/download_models.sh 下載）=====
+models/
+
+# ===== 個人筆記：使用者回報的問題，內容可能貼有 Discord 對話（含暱稱）=====
+ilets_baby/
+deutsch_baby/
+
+# ===== Python / 編輯器 / 工具 =====
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+.vscode/
+.idea/
+.claude/
+.DS_Store

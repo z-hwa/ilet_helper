@@ -1,0 +1,40 @@
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><title>ielts_listen</title><style>/* Discord 風格的示意畫面樣式（只是長得像，不含任何官方素材） */
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body {
+  margin: 0; padding: 22px 26px 26px; width: 820px; background: #313338; color: #dbdee1;
+  font: 16px/1.375 "Noto Sans TC", "Microsoft JhengHei", "gg sans", "Segoe UI", sans-serif;
+}
+.cmd { display: flex; align-items: center; gap: 8px; margin: 4px 0 2px 56px; font-size: 13px; color: #949ba4; }
+.cmd .arrow { width: 26px; height: 12px; border-left: 2px solid #4e5058; border-top: 2px solid #4e5058; border-top-left-radius: 6px; margin-right: 2px; }
+.cmd b { color: #c9cdfb; font-weight: 500; }
+.cmd .opt { color: #949ba4; }
+.msg { display: flex; gap: 16px; margin: 14px 0 0; }
+.avatar { flex: none; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; color: #fff; font-size: 16px; }
+.body { min-width: 0; flex: 1; }
+.head { display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+.name { font-weight: 500; color: #f2f3f5; }
+.tag { background: #5865f2; color: #fff; font-size: 10px; font-weight: 600; border-radius: 3px; padding: 1px 5px; position: relative; top: -1px; }
+.time { font-size: 12px; color: #949ba4; }
+.text { color: #dbdee1; word-wrap: break-word; }
+.text h2 { font-size: 24px; line-height: 1.25; margin: 6px 0 4px; color: #f2f3f5; font-weight: 700; }
+.text code { background: #1e1f22; border-radius: 4px; padding: 1px 5px; font: 14px Consolas, "Courier New", monospace; }
+.text b { color: #f2f3f5; }
+.text ul { margin: 2px 0 6px; padding-left: 22px; }
+.spoiler { background: #1e1f22; color: transparent; border-radius: 4px; padding: 0 3px; user-select: none; }
+.spoiler.open { background: #43454c; color: #dbdee1; }
+.audio { margin-top: 8px; width: 430px; background: #2b2d31; border: 1px solid #1e1f22; border-radius: 8px; padding: 10px 12px; }
+.audio .fn { color: #00a8fc; font-size: 14px; margin-bottom: 6px; }
+.audio .bar { display: flex; align-items: center; gap: 10px; color: #b5bac1; font-size: 12px; }
+.audio .play { width: 22px; height: 22px; border-radius: 50%; background: #dbdee1; display: grid; place-items: center; color: #2b2d31; font-size: 10px; flex: none; }
+.audio .track { flex: 1; height: 4px; background: #4e5058; border-radius: 2px; }
+.voice { margin-top: 8px; width: 330px; background: #5865f2; border-radius: 18px; padding: 8px 14px; display: flex; align-items: center; gap: 10px; color: #fff; font-size: 12px; }
+.voice .play { width: 26px; height: 26px; border-radius: 50%; background: #fff; display: grid; place-items: center; color: #5865f2; font-size: 11px; flex: none; }
+.wave { display: flex; align-items: center; gap: 2px; flex: 1; height: 26px; }
+.wave i { display: block; width: 3px; background: rgba(255,255,255,.85); border-radius: 2px; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.btn { background: #4e5058; color: #fff; border-radius: 4px; padding: 6px 14px; font-size: 14px; font-weight: 500; }
+.reaction { display: inline-flex; gap: 6px; align-items: center; margin-top: 6px; background: #2b2d31; border: 1px solid #5865f2; border-radius: 8px; padding: 1px 7px; font-size: 14px; }
+.reaction small { color: #c9cdfb; }
+.note { margin: 18px 0 0 56px; font-size: 12px; color: #6d6f78; }
+</style></head><body><div class="cmd"><div class="arrow"></div><b>Learner</b> 使用了 <b>/listen</b> <span class="opt">mode: 雅思模擬　section: Section 1</span></div><div class="msg"><div class="avatar" style="background:#e67e22">I</div><div class="body"><div class="head"><span class="name">ILETS baby</span><span class="tag">BOT</span><span class="time">今天 20:15</span></div><div class="text">📝 <b>Section 1</b>　A customer phones a gym to ask about joining.<br>👥 <b>A</b> Emma, a receptionist｜<b>B</b> Mr Brown, a customer<br><br>填空題：NO MORE THAN TWO WORDS AND/OR A NUMBER<br><b>1.</b> Customer's surname: ____<br><b>2.</b> Phone number: ____<br><b>3.</b> Wants to start on 12 ____<br><b>4.</b> Standard membership: £ ____ per month<br><b>5.</b> Why does Mr Brown want to join?<br>　A. to lose weight<br>　B. to meet new people<br>　C. to prepare for a race<br><b>6.</b> What is included for free in the first month?<br>　A. a fitness test<br>　B. a towel service<br>　C. two guest passes<br></div></div></div><div class="msg"><div class="avatar" style="background:#e67e22">I</div><div class="body"><div class="head"><span class="name">ILETS baby</span><span class="tag">BOT</span><span class="time">今天 20:21</span></div><div class="text">✍️ <b>作答方式</b>：一則訊息一行一題，例如 <code>1 Brown</code>、<code>2 B</code>（選擇題也可以一次寫 <code>3A 4C 5B</code>）；同一題再答一次會覆蓋。答完輸入 <code>done</code> 交卷（<code>stop</code> 也一樣），超過 10 分鐘沒回應會自動交卷。<br>⏳ 30 秒後開始播放錄音，<b>只會播一次</b>，先看一下題目。<br></div></div></div><div class="msg"><div class="avatar" style="background:#e67e22">I</div><div class="body"><div class="head"><span class="name">ILETS baby</span><span class="tag">BOT</span><span class="time">今天 20:21</span></div><div class="text">🎧 <b>Section 1</b><br></div><div class="audio"><div class="fn">section1.ogg</div><div class="bar"><div class="play">▶</div><span>0:00 / 2:41</span><div class="track"></div><span>🔊</span></div></div></div></div><div class="msg"><div class="avatar" style="background:#5865f2">L</div><div class="body"><div class="head"><span class="name">Learner</span><span class="time">今天 20:24</span></div><div class="text">1 Brown<br>2 07412 558 913<br>3 March<br>4 32<br>5B 6A<br></div><div class="reaction">✅ <small>1</small></div></div></div><div class="note">示意畫面：範例資料（題目是示範用的，不是實際考題）</div></body></html>

@@ -1,0 +1,7 @@
+#!/bin/sh
+# commit 前自動掃描暫存的內容有沒有 token / API key / Discord ID / email / .env 的值。
+# 啟用（每個 clone 只要做一次）：  git config core.hooksPath .githooks
+ROOT="$(git rev-parse --show-toplevel)"
+PY="${PYTHON:-$(command -v python3 || command -v python)}"
+[ -z "$PY" ] && { echo "找不到 python，略過秘密掃描"; exit 0; }
+exec "$PY" "$ROOT/scripts/check_secrets.py" --staged
