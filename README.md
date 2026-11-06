@@ -67,7 +67,7 @@
 ### 1. 下載與安裝
 
 ```bash
-git clone https://github.com/<你的帳號>/ilet_helper.git
+git clone https://github.com/z-hwa/ilet_helper.git
 cd ilet_helper
 
 python3.11 -m venv .venv
